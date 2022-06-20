@@ -1,5 +1,7 @@
-import { IDatum, IRootObject } from "../interfaces/timetracked.interface";
+import {IRootObject, ISpace} from "../interfaces/spaces.interface";
 
 class SpacesModel implements IRootObject{
-    data: IDatum[];
+    spaces: ISpace[];
 }
+
+export default SpacesModel;

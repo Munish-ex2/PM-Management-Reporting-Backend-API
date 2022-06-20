@@ -1,29 +1,13 @@
-// import mongoose from "../database";
-// import ModelI from "../interfaces/model.interface";
-
-
-export default class BaseService<T>{
-
-    // model: mongoose.Model<any, any>
-    // constructor(modelI?: ModelI){
-    //     this.model = modelI.model
-    // }
-
-    post = async (data: T) => {
-        
+class BaseService{
+    accessToken: string;
+    workspaceId?: string;
+    spaceId?: string;
+    folderId?: string;
+    listId?: string;
+    taskId?: string;
+    constructor(){
+        this.accessToken = "54067919_3e3b0b73203c1c526b5070facc83f7c212944552";
     }
-
-    get = async (filters = {}): Promise<T[]> =>{
-        
-    }
-
-    // getById = async (id: string): Promise<T> => {
-    //     const resource = await this.model.findOne({_id: mongoose.Types.ObjectId(id)}) as T
-    //     return resource
-    // }
-
-    // delete = (id: string): void => {
-    //     return this.model.remove({_id: mongoose.Types.ObjectId(id)})
-    // }
-
 }
+
+export default BaseService;
