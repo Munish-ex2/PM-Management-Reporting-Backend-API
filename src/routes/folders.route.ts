@@ -1,12 +1,12 @@
 import { Router } from "express";
+import {container} from "tsyringe";
 import FoldersController from "../controllers/folders.controller";
 import FoldersService from "../services/folders.service";
 
 const folderRouter = Router();
-var service : FoldersService = new FoldersService('14730797'); 
-const foldersController = new FoldersController(service);
+var foldersController = container.resolve(FoldersController);
 
-folderRouter.get('/allfolders', foldersController.getFolders);
+folderRouter.get('/allfolders/:spaceId', foldersController.get);
 
 
 export default folderRouter;

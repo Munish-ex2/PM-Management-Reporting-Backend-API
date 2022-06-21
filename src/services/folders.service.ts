@@ -5,24 +5,23 @@ import { injectable } from "tsyringe";
 
 @injectable()
 export default class FoldersService extends BaseService{
-    constructor(spaceId: string){
+    constructor(){
         super();
-        this.spaceId = spaceId; 
     }
-    async getFolders() : Promise<FoldersModel | string>{
+    getFolders = async (spaceId: string) : Promise<FoldersModel> => {
+        var x : FoldersModel = new FoldersModel();
         try {
             const response = await axios({
-                url: `https://api.clickup.com/api/v2/space/${this.spaceId}/folder`,
+                url: `https://api.clickup.com/api/v2/space/${spaceId}/folder`,
                 method: "get",
                 headers:{
-                    "Authorzation" : this.accessToken
+                    "Authorization" : this.accessToken
                 }
             })
-            var x : FoldersModel = new FoldersModel();
             x.folders = response.data.folders;
-            return x;
         } catch (error) {
-            return error.message;
+            x.folders = null;
         }
+        return x;
     }
 }

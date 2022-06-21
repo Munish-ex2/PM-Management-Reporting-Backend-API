@@ -68,6 +68,6 @@ export interface IFolder {
 }
 
 export interface IRootObject {
-    folders: IFolder[];
+    folders: IFolder[] | null;
 }
 
