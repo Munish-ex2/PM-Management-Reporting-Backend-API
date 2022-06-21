@@ -22,6 +22,7 @@ import * as cors from "cors";
 import * as express from "express";
 import folderRouter from "./routes/folders.route";
 import assigneeRouter from './routes/assignees.route';
+import spaceRouter from './routes/space.route';
 
 const app = express();
 
@@ -31,6 +32,7 @@ const portName: number = 5500;
 
 app.use('/folders', folderRouter);
 app.use('/assignees', assigneeRouter);
+app.use('/spaces', spaceRouter);
 
 app.listen(portName, serverName, ()=>{
     console.log("Server is working!")
