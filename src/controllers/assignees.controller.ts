@@ -11,9 +11,9 @@ export default class AssigneesController{
 
     get = async(req: Request, res: Response) => {
         const response = await this.service.getAssignees(req.params.taskId);
-        if(response.data == null){
+        if(response.assignees == null){
             res.status(400).send("Bad Request");
         }
-        res.json(response.data);
+        res.json(response.assignees);
     }
 }

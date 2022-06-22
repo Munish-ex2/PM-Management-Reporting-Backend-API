@@ -18,9 +18,9 @@ export default class AssigneesService extends BaseService{
                     "Authorization":this.accessToken
                 }
             })
-            assignees.data = response.data.assignees;
+            assignees.assignees = response.data.assignees;
         } catch (error) {
-            assignees.data = null;
+            assignees.assignees = null;
         }
         return assignees;
     }

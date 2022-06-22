@@ -1,5 +1,5 @@
-import { IDatum, IRootObject } from "../interfaces/timetracked.interface";
+import { IAssignee, IRootObject } from "../interfaces/assignees.interface";
 
 export default class AssigneesModel implements IRootObject{
-    data: IDatum[] | null;
+    assignees: IAssignee[];
 }

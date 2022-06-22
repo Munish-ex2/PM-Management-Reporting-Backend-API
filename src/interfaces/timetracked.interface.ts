@@ -26,7 +26,7 @@ interface IDatum {
 }
 
 interface IRootObject {
-    data: IDatum[];
+    data: IDatum[] | null;
 }
 
 export {IDatum, IRootObject}
