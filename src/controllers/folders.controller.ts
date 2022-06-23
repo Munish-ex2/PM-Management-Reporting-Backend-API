@@ -15,6 +15,6 @@ export default class FoldersController{
         if(response.folders == null){
             res.status(400).send("Bad Request");
         }
-        res.send(response.folders.length.toString());
+        res.send(response.folders);
     }
 }

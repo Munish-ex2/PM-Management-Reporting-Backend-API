@@ -13,7 +13,7 @@ export default class SpaceService extends BaseService{
     }
 
     getSpaces = async (workSpaceId: string) : Promise<SpacesModel>=> {
-        var x : SpacesModel = new SpacesModel();
+        var spacesModel : SpacesModel = new SpacesModel();
         try{
             const response = await axios({
                 url : `https://api.clickup.com/api/v2/team/${workSpaceId}/space`,
@@ -22,10 +22,10 @@ export default class SpaceService extends BaseService{
                     "Authorization":this.accessToken
                 }
             });
-            x.spaces = response.data.spaces;
+            spacesModel.spaces = response.data.spaces;
         }catch(error) {
-            x.spaces = null;
+            spacesModel.spaces = null;
         }
-        return x;
+        return spacesModel;
     }
 } 

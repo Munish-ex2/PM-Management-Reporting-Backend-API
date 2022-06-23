@@ -14,7 +14,7 @@ export default class SpaceController{
     get = async(req: Request, res: Response) => {
         var response = await this.spaceService.getSpaces(req.params.spaceId);
         // res.json(resource.spaces);
-        res.send(response.spaces.toString());
+        res.send(response.spaces);
     }
 
 
