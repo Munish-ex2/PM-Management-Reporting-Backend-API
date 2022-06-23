@@ -17,9 +17,6 @@ export default class SpaceController{
         if(response.spaces == null){
             res.status(400).json("Bad Request");
         }
-        res.send(response.spaces.length.toString());
+        res.send(response.spaces);
     }
-
-
-
 }
